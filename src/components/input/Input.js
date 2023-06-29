@@ -41,9 +41,8 @@ const Input = ({ name = "", type = "text", children, control, ...props }) => {
   });
 
   return (
-    <InputStyles hasIcon={children ? true : false}>
+    <InputStyles>
       <input id={name} type={type} {...field} {...props} />
-      {children}
     </InputStyles>
   );
 };
