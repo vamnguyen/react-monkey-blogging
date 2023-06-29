@@ -7,18 +7,22 @@ import { GlobalStyles } from "./styles/GlobalStyles";
 import { theme } from "./utils/constants";
 import { BrowserRouter } from "react-router-dom";
 import { createRoot } from "react-dom/client";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 const container = document.getElementById("root");
 const root = createRoot(container);
 
 root.render(
-  <React.StrictMode>
-    <ThemeProvider theme={theme}>
-      <GlobalStyles></GlobalStyles>
-      <BrowserRouter>
-        <App />
-      </BrowserRouter>
-    </ThemeProvider>
-  </React.StrictMode>
+  // <React.StrictMode>
+  <ThemeProvider theme={theme}>
+    <GlobalStyles></GlobalStyles>
+    <BrowserRouter>
+      <App />
+      <ToastContainer></ToastContainer>
+    </BrowserRouter>
+  </ThemeProvider>
+  // </React.StrictMode>
 );
 
 // If you want to start measuring performance in your app, pass a function
