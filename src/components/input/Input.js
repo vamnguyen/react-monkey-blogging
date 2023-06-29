@@ -37,7 +37,7 @@ const Input = ({ name = "", type = "text", children, control, ...props }) => {
   const { field } = useController({
     control,
     name,
-    // defaultValue = "",
+    defaultValue: "",
   });
 
   return (
