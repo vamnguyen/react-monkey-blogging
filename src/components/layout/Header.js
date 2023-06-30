@@ -20,7 +20,7 @@ const menuLinks = [
 ];
 
 const HeaderStyles = styled.header`
-  padding: 35px 0;
+  padding: 20px 0;
   .logo-app {
     display: block;
     max-width: 100px;
@@ -65,6 +65,17 @@ const HeaderStyles = styled.header`
   .header-button {
     margin-left: 25px;
     height: 56px;
+  }
+  @media screen and (max-width: 1023.98px) {
+    .logo {
+      max-width: 30px;
+    }
+    .menu,
+    .search,
+    .header-button,
+    .header-auth {
+      display: none;
+    }
   }
 `;
 

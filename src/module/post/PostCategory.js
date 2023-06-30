@@ -9,6 +9,7 @@ const PostCategoryStyles = styled.div`
   color: #6b6b6b;
   font-size: 14px;
   font-weight: 600;
+  white-space: nowrap;
   a {
     display: block;
   }
@@ -22,6 +23,9 @@ const PostCategoryStyles = styled.div`
     css`
       background-color: white;
     `};
+  @media screen and (max-width: 1023.98px) {
+    font-size: 10px;
+  }
 `;
 
 const PostCategory = ({
