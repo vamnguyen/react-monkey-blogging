@@ -1,4 +1,5 @@
 import { Button } from "components/button";
+import { useAuth } from "contexts/auth-context";
 import React from "react";
 import { NavLink } from "react-router-dom";
 import styled from "styled-components";
@@ -48,6 +49,7 @@ const HeaderStyles = styled.header`
     display: flex;
     align-items: center;
     justify-content: space-between;
+    margin-right: 20px;
   }
   .search-input {
     padding-right: 30px;
@@ -66,7 +68,15 @@ const HeaderStyles = styled.header`
   }
 `;
 
+function getLastName(fullName) {
+  if (!fullName) return "User";
+  const length = fullName.split(" ").length;
+  return fullName.split(" ")[length - 1];
+}
+
 const Header = () => {
+  const { userInfo } = useAuth();
+
   return (
     <HeaderStyles>
       <div className="container">
@@ -120,13 +130,24 @@ const Header = () => {
               </svg>
             </span>
           </div>
-          <Button
-            style={{ maxWidth: "150px" }}
-            className="header-button"
-            type="button"
-          >
-            Sign Up
-          </Button>
+          {!userInfo ? (
+            <Button
+              style={{ maxWidth: "150px" }}
+              className="header-button"
+              type="button"
+              to="/sign-up"
+              kind="primary"
+            >
+              Sign Up
+            </Button>
+          ) : (
+            <div className="header-auth">
+              <span>Welcome back, </span>
+              <strong className="text-primary">
+                {getLastName(userInfo?.displayName)}
+              </strong>
+            </div>
+          )}
         </div>
       </div>
     </HeaderStyles>
