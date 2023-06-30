@@ -4,6 +4,7 @@ import SignUpPage from "./pages/SignUpPage";
 import LoginPage from "pages/LoginPage";
 import HomePage from "pages/HomePage";
 import NotFoundPage from "pages/NotFoundPage";
+import PostDetailsPage from "pages/PostDetailsPage";
 
 function App() {
   return (
@@ -14,6 +15,10 @@ function App() {
           <Route path="/sign-up" element={<SignUpPage></SignUpPage>}></Route>
           <Route path="/login" element={<LoginPage></LoginPage>}></Route>
           <Route path="*" element={<NotFoundPage></NotFoundPage>}></Route>
+          <Route
+            path="/:slug"
+            element={<PostDetailsPage></PostDetailsPage>}
+          ></Route>
         </Routes>
       </AuthProvider>
     </div>
