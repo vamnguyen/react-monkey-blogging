@@ -5,7 +5,7 @@ import { Label } from "components/label";
 import React from "react";
 import { useForm } from "react-hook-form";
 import styled from "styled-components";
-import { Checkbox, Radio } from "components/checkbox";
+import { Radio } from "components/checkbox";
 import { Dropdown } from "components/dropdown";
 
 const PostAddNewStyles = styled.div``;
