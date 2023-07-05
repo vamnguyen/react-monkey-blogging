@@ -26,6 +26,7 @@ const PostAddNew = () => {
       categoryId: "",
       hot: false,
       image: "",
+      category: "",
     },
   });
   const watchStatus = watch("status");
@@ -43,6 +44,7 @@ const PostAddNew = () => {
       image,
       // userId: userInfo.uid,
     });
+    console.log("addPostHandler ~ cloneValues:", cloneValues);
   };
 
   const { progress, image, handleSelectImage, handleDeleteImage } =
